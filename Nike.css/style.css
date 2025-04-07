@@ -1,142 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
-
-:root {
-    --cor-primaria: #0f0f10;  
-    --cor-secundaria: #F6F6F6;
-    --cor-terciaria: #ffd700;   
-    --cor-hover: #272727; 
-
-    --font-primaria: 'Krona One', sans-serif;
-    --font-secundaria: 'Montserrat', sans-serif;
-}
-
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: #ccee66;
+    color: white;
+    padding: 20px 160px;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Noto Sans", sans-serif;
+    z-index: 3;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    background: #090909;
+    position: absolute;
+    top: 0;
+    left: -990px;
+    transform: rotate(-70deg);
+    width: 100%;
+    height: 120%;
+}
+
+body::after {
+    content: 'Nike';
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: #202020;
+    font-size: 250px;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.logo {
+    width: 90px;
+    z-index: 1;
+    position: relative;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.botao-carrinho {
+    background: #b3eb0b;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.botao-carrinho:hover {
+    opacity: 0.7;
+}
+
+.imagem-tenis {
+    width: 800px;
+    transform: rotate(-25deg);
+    filter: drop-shadow(30px 45px 40px #161616);
+    transition: 1s;
+}
+
+.troca-efeito {
+    opacity: 0;
+    transform: rotate(-25deg) translateY(-30px);
+}
+
+.box-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75%;
+    z-index: 1;
+    position: relative;
+}
+
+.box-texto {
+    max-width: 500px;
+}
+
+.caixa-botoes {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.botoes {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.verde {
+    background-color: #ccee66;
+}
+
+.azul {
+
+    background-color: #58cced;
+}
+
+.rosa {
+    background-color: #ff9eb5;
+}
+
+.botoes:active {
+    opacity: 0.6;
 }
 
 body {
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
-    font-family: var(--font-secundaria);
-}
-
-/* Cabeçalho */
-.cabecalho {
-    padding: 2% 0 0 15%;
-}
-
-.cabecalho_link {
-    display: flex;
-    gap: 80px;
-}
-
-.cabecalho_menu__link {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--cor-terciaria);
-    text-decoration: none;
-}
-
-/* Apresentação */
-.apresentacao {
-    padding: 5% 15%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.apresentacao_conteudo {
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.apresentacao_conteudo__titulo {
-    font-size: 36px;
-    font-family: var(--font-primaria);
-}
-
-.titulo_destaque {
-    color: var(--cor-terciaria);
-}
-
-.apresentacao__conteudo__texto {
-    font-size: 24px;
-}
-
-.apresentacao_link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-}
-
-.apresentacao_link__sub {
-    font-family: var(--font-primaria);
-    font-size: 24px;
-}
-
-.apresentacao__links__navegacao {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    border: 2px solid var(--cor-terciaria);
-    width: 100%;
-    max-width: 378px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 21.5px 0;
-    text-decoration: none;
-    color: var(--cor-secundaria);
-}
-
-.apresentacao__links__navegacao:hover {
-    background-color: var(--cor-hover);
-    transform: scale(1.05);
-    transition: 0.3s ease;
-}
-
-/* Certificados */
-.apresentacao_certificados {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 26px;
-    padding: 40px 0;
-}
-
-/* Contato */
-.contato {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    border: 2px solid var(--cor-terciaria);
-    width: 100%;
-    max-width: 378px;
-    margin: 0 auto 40px auto;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 21.5px 0;
-}
-
-/* Rodapé */
-.rodape {
-    padding: 24px;
-    color: var(--cor-primaria);
-    background-color: var(--cor-terciaria);
-    text-align: center;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 1rem;
 }
 
 /* Responsividade */
